@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FedEx</title>
+    <base href="/" />
+    <link rel="stylesheet" href="fonts/css/all.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+    .main-head {
+      padding-bottom: 7px;
+      border-bottom: 2px inset rgb(182, 180, 180);
+      box-shadow: 0px 1px 3px rgb(182, 180, 180);
+    }
+    .sub-head {
+      display: flex;
+      background-color: #460888;
+      width: 100%;
+      height: 70px;
+    }
+    .head-img {
+      display: inline-block;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: auto;
+    }
+    .head-img0 {
+      width: 100px;
+      height: 40px;
+      border: 1px solid;
+      border: #460888;
+    }
+    .sing-in-text-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5px;
+      font-size: 18px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .sign-in-i {
+      display: inline-block;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .fa-user-circle {
+      color: white;
+      font-size: 25px;
+      font-weight: 200;
+    }
+    .menu-bar {
+      display: inline-block;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      margin-left: 5px;
+    }
+    .fa-bars {
+      color: white;
+      font-size: 25px;
+    }
+    .menu-popup {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      position: absolute;
+      z-index: 10;
+      right: 0;
+      background-color: #460888;
+      transition: 300ms ease-in;
+      display: none;
+    }
+    .options-tap {
+      color: white;
+      padding-right: 20px;
+      padding-left: 20px;
+      display: flex;
+    }
+    .options-tap-text {
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-right: auto;
+    }
+    .o-t {
+      padding-top: 25px;
+    }
+    .o-b {
+      padding-bottom: 25px;
+    }
+    .o-i-d {
+      font-size: 20px;
+    }
+    .contant-box {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .user-details-box {
+      margin-top: 20px;
+    }
+    .u-b-c {
+      display: flex;
+      flex-direction: column;
+      margin-left: 10px;
+      margin-right: 25px;
+    }
+    .u-t {
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-top: 7px;
+    }
+    .u-in0 {
+      height: 25px;
+      border: 1px solid;
+      margin-top: 5px;
+    }
+    .checkbox-box {
+      display: flex;
+    }
+    .s-c {
+      margin-right: 10px;
+    }
+    .c-b {
+      margin-top: 7px;
+      width: 15px;
+      height: 15px;
+    }
+    .c-in {
+      margin-top: 10px;
+    }
+    .generate-id-save {
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+    }
+    .g-id {
+      width: 100px;
+      height: 25px;
+    }
+    .generated-id-box {
+      display: flex;
+      justify-content: center;
+    }
+    .generated-id-text {
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .all-ids {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    .id-parentBody {
+      margin-top: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-left: 20px;
+      margin-bottom: 40px;
+    }
+    .id-box {
+      display: flex;
+      gap: 7px;
+    }
+    .id-text {
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .id-delete-btw {
+      width: 70px;
+      height: 25px;
+      border: 1px solid;
+      border-radius: 7px;
+      background-color: rgb(201, 131, 1);
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="user-page">
+      <div class="main-head">
+        <div class="sub-head">
+          <span class="head-img"
+            ><img class="head-img0" src="f-logo.jpg"
+          /></span>
+          <span class="sing-in-text-box"
+            ><h5 class="sing-in-text u-s-t">Welcome</h5></span
+          >
+          <span class="sign-in-i"><i class="fa fa-user-circle"></i></span>
+          <span class="menu-bar"><i class="fas fa-bars"></i></span>
+        </div>
+      </div>
+      <div class="menu-popup">
+        <span class="options-tap o-t"
+          ><h5 class="options-tap-text">Shipping</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap t-i-tap"
+          ><h5 class="options-tap-text">Tracking</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap"
+          ><h5 class="options-tap-text">Design & Print</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap"
+          ><h5 class="options-tap-text">Locations</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap" data-support="support"
+          ><h5 class="options-tap-text">Support</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap o-b"
+          ><h5 class="options-tap-text">Shipping</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+      </div>
+      <div class="contant-box">
+        <div class="user-details-box u-b-c">
+          <h5 class="form-box u-t">Sender Details</h5>
+          <input class="from-in u-in0" type="text" placeholder="from city?" />
+          <input
+            class="from-date-in u-in0"
+            type="text"
+            placeholder="date 1/07/25"
+          />
+          <input
+            class="from-time-in u-in0"
+            type="text"
+            placeholder="time 12:00AM"
+          />
+        </div>
+        <div class="company-details-box u-b-c">
+          <h5 class="company-box-text u-t">Receivers Company Details</h5>
+          <input
+            class="company-in u-in0"
+            type="text"
+            placeholder="company city?"
+          />
+          <input
+            class="company-date-in u-in0"
+            type="text"
+            placeholder="date 2/07/25"
+          />
+          <input
+            class="company-time-in u-in0"
+            type="text"
+            placeholder="time 10:30AM"
+          />
+          <input
+            class="company-day-in u-in0"
+            type="text"
+            placeholder="day mon-fri ?"
+          />
+          <h5 class="company-box-text0 u-t">Depation Time & Date</h5>
+          <input
+            class="company-d-time-in u-in0"
+            type="text"
+            placeholder="time 10:30AM"
+          />
+          <input
+            class="company-d-day-in u-in0"
+            type="text"
+            placeholder="day mon-fri ?"
+          />
+        </div>
+        <div class="cl-details-box u-b-c">
+          <h5 class="cl-box u-t">Cl Address</h5>
+          <input
+            class="cl-in u-in0"
+            type="text"
+            placeholder="cl city & address ?"
+          />
+          <h5 class="cl-receive-date-text u-t">
+            Package Receive Date, Time & Day
+          </h5>
+          <input
+            class="cl-date-in u-in0"
+            type="text"
+            placeholder="date and time 2/07/25 2:00PM"
+          />
+          <input class="cl-day-in u-in0" type="text" placeholder="day?" />
+        </div>
+        <div class="package-deatails-box0 u-b-c">
+          <h5 class="package-box0 u-t">Package Details</h5>
+          <input
+            class="package-weight-in u-in0"
+            type="text"
+            placeholder="weight ?"
+          />
+          <input
+            class="package-pieces-in u-in0"
+            type="text"
+            placeholder="pieces ?"
+          />
+          <input
+            class="package-total-weight-in u-in0"
+            type="text"
+            placeholder="total weight ?"
+          />
+        </div>
+        <div class="customes-details-box u-b-c">
+          <h5 class="customes-box u-t">Customes Details</h5>
+          <input
+            class="customes-in u-in0"
+            type="text"
+            placeholder="customes city?"
+          />
+          <input
+            class="customes-date-in u-in0"
+            type="text"
+            placeholder="date 3/07/25"
+          />
+          <input
+            class="customes-time-in u-in0"
+            type="text"
+            placeholder="time 10:30AM"
+          />
+          <input
+            class="customes-day-in u-in0"
+            type="text"
+            placeholder="day mon-fri ?"
+          />
+        </div>
+        <div class="c-t-b u-b-c">
+          <h5 class="c-t-b-t u-t">Contact info WhatsApp (dont add +)</h5>
+          <input
+            class="c-t-b-in u-in0"
+            type="text"
+            placeholder="+15873556401 ?"
+          />
+        </div>
+        <div class="c-a-b u-b-c">
+          <h5 class="c-a-t u-t">Clearance Amount</h5>
+          <input class="c-a-in u-in0" type="text" placeholder="$0.00 ?" />
+          <div class="checkbox-box">
+            <h5 class="s-c u-t">State To State</h5>
+            <input class="s-in c-b" type="checkbox" />
+          </div>
+          <div class="checkbox-box">
+            <h5 class="s-c u-t">Country To Country</h5>
+            <input class="c-in c-b" type="checkbox" />
+          </div>
+        </div>
+        <div class="generate-id-save">
+          <button class="get-t-id g-id">Get ID</button>
+          <button class="save-t-id g-id">Save ID</button>
+        </div>
+        <div class="generated-id-box"><h5 class="generated-id-text"></h5></div>
+      </div>
+      <div class="all-ids">
+        <h5 class="all-ids-text">***ALL IDS SAVED***</h5>
+      </div>
+      <div class="id-parentBody"></div>
+    </div>
+    <form class="tracking-main" action="/" method="get"></form>
+    <a href="" target="_blank" class="support-link"></a>
+  </body>
+  <script>
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest("[data-support]");
+      if (target) {
+        if (target.dataset.support === "support") {
+          const link = document.querySelector(".support-link");
+          link.href =
+            "mailto:fedexdays1@gmail.com?subject=Question%20about%20Package&body=Hello%0AI%20have%20a%20question%20about%20my%20package.";
+          link.click();
+        }
+      }
+    });
+    let dropDownMenuPass = false;
+    const dropDownMenu = document
+      .querySelector(".fa-bars")
+      .addEventListener("click", () => {
+        const dropDown = document.querySelector(".menu-popup");
+        if (!dropDownMenuPass) {
+          dropDown.style.display = "flex";
+          return (dropDownMenuPass = true);
+        } else {
+          dropDown.style.display = "none";
+          return (dropDownMenuPass = false);
+        }
+      });
+    const trackingMainBtw = document
+      .querySelector(".t-i-tap")
+      .addEventListener("click", () => {
+        document.querySelector(".tracking-main").submit();
+      });
+    let iDS = null;
+    const getIDBtw = document
+      .querySelector(".get-t-id")
+      .addEventListener("click", () => {
+        getTrackingID();
+      });
+    function getTrackingID() {
+      const senderDetails = {
+        city: document.querySelector(".from-in").value.trim(),
+        date: document.querySelector(".from-date-in").value.trim(),
+        time: document.querySelector(".from-time-in").value.trim(),
+      };
+      const companyReceived = {
+        city: document.querySelector(".company-in").value.trim(),
+        date: document.querySelector(".company-date-in").value.trim(),
+        time: document.querySelector(".company-time-in").value.trim(),
+        day: document.querySelector(".company-day-in").value.trim(),
+        depationTime: {
+          day: document.querySelector(".company-d-day-in").value.trim(),
+          time: document.querySelector(".company-d-time-in").value.trim(),
+        },
+      };
+      const clDetails = {
+        address: document.querySelector(".cl-in").value.trim(),
+        packageRecivedDAndT: document.querySelector(".cl-date-in").value.trim(),
+        packageRecivedDay: document.querySelector(".cl-day-in").value.trim(),
+      };
+      const packageDetails = {
+        weight: document.querySelector(".package-weight-in").value.trim(),
+        pieces: document.querySelector(".package-pieces-in").value.trim(),
+        totalWeight: document
+          .querySelector(".package-total-weight-in")
+          .value.trim(),
+      };
+      const customesDetails = {
+        city: document.querySelector(".customes-in").value.trim(),
+        date: document.querySelector(".customes-date-in").value.trim(),
+        time: document.querySelector(".customes-time-in").value.trim(),
+        day: document.querySelector(".customes-day-in").value.trim(),
+      };
+      const clearanceDetails = {
+        amount: document.querySelector(".c-a-in").value.trim(),
+        state: document.querySelector(".s-in").checked,
+        country: document.querySelector(".c-in").checked,
+      };
+      const contact = document.querySelector(".c-t-b-in").value.trim();
+      inPutValidation(
+        senderDetails,
+        companyReceived,
+        clDetails,
+        packageDetails,
+        customesDetails,
+        clearanceDetails,
+        contact
+      );
+    }
+    function inPutValidation(sd, cr, cld, pd, cd, clad, ct) {
+      if (sd.city === "") {
+        alert("Sender city cant be empty");
+        return;
+      }
+      if (sd.date === "") {
+        alert("Sender date cant be empty");
+        return;
+      }
+      if (sd.time === "") {
+        alert("Sender time cant be empty");
+        return;
+      }
+      if (sd.time === "") {
+        alert("Sender time cant be empty");
+        return;
+      }
+      if (cr.city === "") {
+        alert("Company city cant be empty");
+        return;
+      }
+      if (cr.date === "") {
+        alert("Company date cant be empty");
+        return;
+      }
+      if (cr.time === "") {
+        alert("Company time cant be empty");
+        return;
+      }
+      if (cr.day === "") {
+        alert("Company day cant be empty");
+        return;
+      }
+      if (cr.depationTime.day === "") {
+        alert("depation day cant be empty");
+        return;
+      }
+      if (cr.depationTime.time === "") {
+        alert("depation time cant be empty");
+        return;
+      }
+      if (cld.address === "") {
+        alert("Cl address cant be empty");
+        return;
+      }
+      if (cld.packageRecivedDAndT === "") {
+        alert("Cl Package Recived date cant be empty");
+        return;
+      }
+      if (cld.packageRecivedDay === "") {
+        alert("Cl Package Recived day cant be empty");
+        return;
+      }
+      if (pd.weight === "") {
+        alert("Package Details weight cant be empty");
+        return;
+      }
+      if (pd.pieces === "") {
+        alert("Package Details pieces cant be empty");
+        return;
+      }
+      if (pd.totalWeight === "") {
+        alert("Package Details Total Weight cant be empty");
+        return;
+      }
+      if (cd.city === "") {
+        alert("Customes city cant be empty");
+        return;
+      }
+      if (cd.date === "") {
+        alert("Customes date cant be empty");
+        return;
+      }
+      if (cd.time === "") {
+        alert("Customes time cant be empty");
+        return;
+      }
+      if (cd.day === "") {
+        alert("Customes day cant be empty");
+        return;
+      }
+      if (clad.state == false && clad.country === false) {
+        alert("Cant leave both fileds empty");
+        return;
+      }
+      if (clad.amount === "") {
+        alert("Clearance amount cant be empty");
+        return;
+      }
+      if (clad.state === true && clad.country === true) {
+        alert("Cant check both fileds");
+        return;
+      }
+      if (ct === "") {
+        alert("Contact cant be empty");
+        return;
+      }
+      getID(sd, cr, cld, pd, cd, clad, ct);
+    }
+    let tempDetails = null;
+    function getID(sd, cr, cld, pd, cd, clad, ct) {
+      let tempIDStored = [];
+      const state = [];
+      if (clad.state) {
+        for (let i = 0; i < 2; i++) {
+          if (i === 0) {
+            state.push("states");
+          } else {
+            state.push("city");
+          }
+        }
+      } else if (clad.country) {
+        for (let i = 0; i < 2; i++) {
+          if (i === 0) {
+            state.push("country");
+          } else {
+            state.push("country");
+          }
+        }
+      }
+      if (iDS) {
+        iDS.forEach((e) => {
+          const id = e.id;
+          tempIDStored.push(id);
+        });
+      }
+      if (tempIDStored.length === 20) {
+        alert("max id genarated");
+        return;
+      }
+      let lastIDNum = null;
+      do {
+        lastIDNum = `98700436109${Math.floor(Math.random() * 20)}`;
+        console.log(lastIDNum);
+      } while (
+        tempIDStored.length === 0 ? false : tempIDStored.includes(lastIDNum)
+      );
+      const idDetails = {
+        senderDetails: { city: sd.city, date: sd.date, time: sd.time },
+        receiversCompanyDetails: {
+          city: cr.city,
+          date: cr.date,
+          time: cr.time,
+          day: cr.day,
+        },
+        depationDateAndTime: {
+          time: cr.depationTime.time,
+          day: cr.depationTime.day,
+        },
+        clDetails: {
+          address: cld.address,
+          packageRecivedDAndT: cld.packageRecivedDAndT,
+          packageRecivedDay: cld.packageRecivedDay,
+        },
+        packageDetails: {
+          weight: pd.weight,
+          pieces: pd.pieces,
+          totalWeight: pd.totalWeight,
+        },
+        customesDetails: {
+          city: cd.city,
+          date: cd.date,
+          time: cd.time,
+          day: cd.day,
+        },
+        contact: ct,
+        clearanceDetails: `FedEx 2Day has arranged clearance and submitted payment of $${clad.amount}, to the ${state[0]} customs agency in the destination ${state[1]} on your behalf. You package would start moving once clearance fees are made. For information about Clearance and Customes fees, please contact fedex with the below link.`,
+        id: lastIDNum,
+      };
+      const idDisplay = (document.querySelector(
+        ".generated-id-text"
+      ).textContent = idDetails.id);
+      return (tempDetails = idDetails);
+    }
+    const saveIDBtw = document
+      .querySelector(".save-t-id")
+      .addEventListener("click", () => {
+        if (tempDetails) {
+          saveID(tempDetails);
+          return (tempDetails = null);
+        }
+      });
+
+    const saveID = async (data) => {
+      try {
+        const details = await fetch("/user/save", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const res = await details.json();
+        if (res.status === 201) {
+          alert(res.message);
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    const getID0 = new Promise((resolve, reject) => {
+      resolve(fetch("/g/tracking/id"));
+      reject(error);
+    });
+    getID0
+      .then((e) => {
+        return e.json();
+      })
+      .then((d) => {
+        const data = d;
+        if (data.status !== 404) {
+          return (iDS = data);
+        }
+      })
+      .then(() => {
+        if (iDS) {
+          iDS.forEach((e) => {
+            const id = e.id;
+            idRender(id);
+          });
+        }
+      });
+
+    function idRender(d) {
+      const data = d;
+      const parentDiv = document.querySelector(".id-parentBody");
+      const createChildDiv = document.createElement("div");
+      createChildDiv.className = "id-box";
+      const divChild = document.createElement("h5");
+      divChild.className = "id-text";
+      divChild.textContent = data;
+      const divBtw = document.createElement("button");
+      divBtw.className = "id-delete-btw";
+      divBtw.textContent = "delete";
+      divBtw.addEventListener("click", () => {
+        parentDiv.removeChild(createChildDiv);
+        deleteID(data);
+      });
+      createChildDiv.append(divChild, divBtw);
+      parentDiv.appendChild(createChildDiv);
+    }
+    async function deleteID(d) {
+      const id = d;
+      try {
+        const data = await fetch(`/tracking/d/${id}`, {
+          method: "DELETE",
+        });
+        const res = await data.json();
+        if (res.status === 200) {
+          alert(res.message);
+        }
+      } catch (error) {
+        alert(error);
+      }
+    }
+  </script>
+</html>

