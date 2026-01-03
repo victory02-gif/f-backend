@@ -190,3 +190,7 @@ app.post("/p/v", async (req, res) => {
 app.get("/user/43582", (req, res) => {
   res.render("f-login-u");
 });
+//ping to stay awake
+app.get('/keep/awake',(req, res)=>{
+  res.sendStatus(200);
+})
